@@ -27,3 +27,17 @@ let capAmerica={
     }
 }
 console.log(capAmerica);
+console.log(capAmerica.Name);
+console.log(capAmerica.address);
+console.log(capAmerica.Friends[4]);
+console.log(capAmerica.sayHi());
+capAmerica.sayHi();
+
+// Add a new key to object
+capAmerica.Movies=['Avengers','Civil War','Endgame'];
+console.log(capAmerica)
+
+
+//deleting a key
+delete capAmerica.Movies;
+console.log(capAmerica)
