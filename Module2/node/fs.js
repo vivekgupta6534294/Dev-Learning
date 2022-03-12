@@ -52,6 +52,15 @@ if(!fs.existsSync("HamariDirectory"))
 fs.mkdirSync("HamariDirectory");
 
 // Read a directory 
-let folderPath="D:\ForPlacement\Development\DevLearning\Module 1";
-let contentOfFolder=fs.readFileSync(folderPath);
+// console.log(__dirname);
+let folderPath="D:/ForPlacement/Development/DevLearning/Module1";
+let contentOfFolder=fs.readdirSync(folderPath);
 console.log(contentOfFolder);
+
+
+// fs.rmdirSync("HamariDirectory");
+// fs.rmdirSync("HamariDirectory",{recursive:true});
+// fs.copyFileSync("test.js",path.join(__dirname, path.join("HamariDirectory", "test.js")))
+let sourcePath=path.join(__dirname,"test.js");
+let destinationPath=path.join(__dirname,"HamariDirectory","test.js");
+fs.copyFileSync(sourcePath,destinationPath);
