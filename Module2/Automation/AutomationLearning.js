@@ -2,7 +2,8 @@ const puppeteer = require("puppeteer");
 const mail = "wenerol220@hhmel.com";
 const pass = "automation";
 // @chromium-browser --start-fullscreen;
-let browserPromise = puppeteer.launch({ headless: false,args: ['--start-fullscreen'],defaultViewport: null});
+let browserPromise = puppeteer.launch({ headless: false,args: ['--start-fullscreen'],defaultViewport: null,executablePath: '"C://Program Files//Google//Chrome//Application//chrome.exe"' 
+});
 let page;
 browserPromise.then(function(browser){
     console.log("Browser is opened");
