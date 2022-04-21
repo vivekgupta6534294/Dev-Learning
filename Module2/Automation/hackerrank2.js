@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
-const mail = "gavic76183@carsik.com";
-const pass = "abcdef";
+const mail = "wenerol220@hhmel.com";
+const pass = "automation";
 const code = require('./code');
 
 let browserPromise = puppeteer.launch({ headless: false, defaultViewport: null,args: ['--start-fullscreen'] });
@@ -69,8 +69,17 @@ browserPromise.then(function(browser){
     return arrPromise;
 }).then(function(questionsArr){
     console.log(questionsArr);
-    
+    console.log(code.answers.length);
     let questionPromise = questionSolver(questionsArr[0],code.answers[0]);
+    for(let i=1;i<questionsArr.length;i++){
+        questionPromise = questionPromise.then(function(){
+            let nextQuestionPromise = questionSolver(questionsArr[i],code.answers[i]);
+            return nextQuestionPromise;
+        })
+    }
+    return questionPromise;
+}).then(function(){
+    console.log("All the warm up questions have been submitted!!!");
 })
 
 
@@ -96,7 +105,6 @@ function questionSolver(question,answer){
         }).then(function(){
             return waitAndClick('.ui-tooltip-wrapper textarea');
         }).then(function(){
-            console.log("on the text area");
             let typePromise = page.type('.ui-tooltip-wrapper textarea',answer);
             return typePromise;
         }).then(function(){
@@ -123,9 +131,13 @@ function questionSolver(question,answer){
             let pressV = page.keyboard.press('V');
             return pressV;
         }).then(function(){
+            let upControl = page.keyboard.up('Control');
+            return upControl;
+        }).then(function(){
             return waitAndClick('.ui-btn.ui-btn-normal.ui-btn-primary.pull-right.hr-monaco-submit.ui-btn-styled');
         }).then(function(){
             console.log("questions submitted success");
+            resolve();
         })
     })
 }
