@@ -88,7 +88,7 @@ function waitAndClick(selector){
     return new Promise(function(resolve,reject){
         let waitPromise = page.waitForSelector(selector);
         waitPromise.then(function(){
-            let clickPromise = page.click(selector);
+            let clickPromise = page.click(selector,{delay:1000});
             return clickPromise;
         }).then(function(){
             resolve();
@@ -120,7 +120,7 @@ function questionSolver(question,answer){
             let upControl = page.keyboard.up('Control');
             return upControl;
         }).then(function(){
-            return waitAndClick('.monaco-editor.no-user-select.vs');
+            return waitAndClick('.monaco-editor.no-user-select.vs',{delay:100});
         }).then(function(){
             let holdControl = page.keyboard.down('Control');
             return holdControl;  
