@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "chrome-launcher": "^0.15.0",
-    "puppeteer": "^13.5.2"
+    "convert-excel-to-json": "^1.7.0",
+    "dotenv": "^16.0.0",
+    "puppeteer": "^13.5.2",
+    "puppeteer-extra": "^3.2.3",
+    "puppeteer-extra-plugin-stealth": "^2.9.0"
   }
 }
