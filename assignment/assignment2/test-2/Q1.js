@@ -11,6 +11,8 @@ function f(arr) {
 
 console.log(arr);
 
+// console.log(f(arr));
+// Below Line is changed to make it pure 
 console.log(g(arr));
 
 console.log(arr);
