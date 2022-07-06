@@ -19,10 +19,30 @@
     class Counter extends React.Component{// inherit krlena hai , React Component
         constructor(){
             super();
+            this.state={
+                count:0,
+            };
+        }
+        // this ki ambuiguity remove
+        increment=()=>{
+            // this.state.count++; wrong method
+            this.setState({// set state use krna hoga tu change 
+                count:this.state.count+1,
+            })
+        }
+        decrement=()=>{
+            this.setState({
+                count:this.state.count-1,
+            })
         }
         render(){
         return(
-            <h1>Hello World</h1>
+            <div>
+                <h1>{this.state.count}</h1>
+                <button onClick={this.increment}>+</button>
+                <button onClick={this.decrement}>-</button>
+            </div>
+         
         )
     }
     }
