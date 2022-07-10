@@ -43,11 +43,12 @@ class MovieList extends Component {
             },this.changeMovies);
     }  
     handlePageClick=(ele)=>{
-        this.setState({
-            currPage:ele
-        },this.changeMovies)
-
-    }
+        if(ele!=this.state.currPage){
+            this.setState({
+                currPage:ele
+            },this.changeMovies)
+        }
+        }
 
     render() {
         console.log("rednered");
