@@ -5,30 +5,34 @@
 
 //A
 function transducer(arr, fFn, mFn) {
-    let nArr = arr.filter(fFn);
-    nArr = nArr.map(mFn);
-    return nArr;
+  let nArr = arr.filter(fFn);
+  nArr = nArr.map(mFn);
+  return nArr;
 }
 
 
 //B
 function transducer(arr, fFn, mFn) {
-    let nArr = [];
-    for (x in arr) {
-        if (fFn(arr[x])) {
-            nArr.push(arr[x]);
-        }
+  let nArr = [];
+  for (x in arr) {
+    if (fFn(arr[x])) {
+      nArr.push(arr[x]);
     }
+  }
 
-    for (x in nArr) {
-        nArr[x] = mFn(nArr[x]);
-    }
-    return nArr;
+  for (x in nArr) {
+    nArr[x] = mFn(nArr[x]);
+  }
+  return nArr;
 }
 
 // Options:
 
 // 1) A
 // 2) B
-// 3) Both - ans 
+// 3) Both
 // 4) None
+
+//solution 
+//3)
+

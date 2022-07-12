@@ -3,7 +3,7 @@
 // f(x, y)
 // f(x)(y)
 
-
+//solution
 function f(x,y){
     if(y == undefined){
        return function(y){
@@ -16,4 +16,5 @@ function f(x,y){
 
 console.log(f(5,4));
 console.log(f(5)(4));
+
 
