@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import "./theme.css"
+import "../theme.css"
 import {ThemeContext} from "./ThemeChanger"
 
 
