@@ -20,7 +20,7 @@ body{
 }
 
 .pimg{
-    margin:5rem;
+    margin-top: 4rem;
     height: 20rem;
     width: 20rem;
     border-radius: 50%;
@@ -32,12 +32,10 @@ body{
 }
 
 .content{
-    line-height: 2px;
+    /* margin-left; */
+    line-height: 1.5;
     font-size: 1.5rem;
     color: grey;
-    /* margin:4rem; */
-    /* margin-right: 50%; */
-    /* margin-left: 1rem; */
 }
 
 .bold_text{
